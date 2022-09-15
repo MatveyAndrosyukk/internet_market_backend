@@ -16,7 +16,7 @@ import java.util.Objects;
 @Builder
 public class DishEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Lob
     private byte[] image;
