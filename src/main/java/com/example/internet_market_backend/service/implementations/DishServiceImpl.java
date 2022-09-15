@@ -8,7 +8,6 @@ import com.example.internet_market_backend.repository.DishRepository;
 import com.example.internet_market_backend.service.interfaces.DishService;
 import com.example.internet_market_backend.utils.ModelUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

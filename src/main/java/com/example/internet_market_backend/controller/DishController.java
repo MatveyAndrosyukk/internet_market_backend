@@ -1,6 +1,5 @@
 package com.example.internet_market_backend.controller;
 
-import com.example.internet_market_backend.entity.DishEntity;
 import com.example.internet_market_backend.model.Dish;
 import com.example.internet_market_backend.service.interfaces.DishService;
 import org.springframework.http.ResponseEntity;
@@ -27,13 +26,6 @@ public class DishController {
         List<Dish> response = dishService.findAll();
 
         return dishService.buildPaginatedResponse(response, limit, page, String.valueOf(response.size()));
-    }
-
-    @GetMapping("{dishId}")
-    public ResponseEntity<DishEntity> findDishById(@PathVariable Long dishId) {
-        DishEntity response = dishService.findById(dishId);
-
-        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/category/{category}")

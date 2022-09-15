@@ -61,8 +61,8 @@ ALTER TABLE user_dish
         FOREIGN KEY (dish_id) REFERENCES dishes (id);
 
 INSERT INTO users (id, email, name, password, phone)
-VALUES (1, 'matvey@gmail.com', 'Matvey', 'matvey', '375255198474'),
-       (2, 'ivan@gmail.com', 'Ivan', 'ivan', '375255198474');
+VALUES (1, 'matvey@gmail.com', 'Matvey', '$2a$10$YFUqflS0AtOMshvZvol5jOGXnnIh59wu9bK8Y2wgblzubmx84SQkK', '375255198474'),
+       (2, 'ivan@gmail.com', 'Ivan', '$2a$10$pviuUtzkIx4FiNvFwFTSTusjh8yw0ejlfRqb50g7Yv.uP971HOCbS', '375255198474');
 
 INSERT INTO user_role (user_id, roles)
 VALUES (1, 'ADMIN'), (1, 'USER'), (2, 'USER');
