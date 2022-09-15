@@ -17,7 +17,7 @@ import java.util.Objects;
 @Builder
 public class Dish {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(columnDefinition = "TEXT")
     private String image;
