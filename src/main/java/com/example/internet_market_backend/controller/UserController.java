@@ -31,14 +31,6 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("login")
-    public ResponseEntity<User> logIn(@RequestParam(name = "email") String email,
-                                      @RequestParam(name = "password") String password) {
-        User response = userService.logIn(email, password);
-
-        return ResponseEntity.ok(response);
-    }
-
     @PostMapping
     public ResponseEntity<User> saveUser(@RequestBody User user) {
         User response = userService.save(user);
