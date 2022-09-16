@@ -28,8 +28,8 @@ public class DishController {
         return dishService.buildPaginatedResponse(response, limit, page, String.valueOf(response.size()));
     }
 
-    @GetMapping("/category/{category}")
-    public ResponseEntity<List<Dish>> findDishesByCategory(@PathVariable String category,
+    @GetMapping("/category")
+    public ResponseEntity<List<Dish>> findDishesByCategory(@RequestParam(value = "category") String category,
                                                                  @RequestParam(value = "limit", required = false)
                                                                          Integer limit,
                                                                  @RequestParam(value = "page", required = false,
