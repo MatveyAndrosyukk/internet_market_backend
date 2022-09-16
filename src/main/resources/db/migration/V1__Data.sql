@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS dishes
     category VARCHAR(255) NOT NULL,
     count BIGINT NOT NULL,
     description VARCHAR(3000) NOT NULL,
-    image longblob,
+    image OID,
     price BIGINT NOT NULL,
     title VARCHAR(255) NOT NULL,
     total_price BIGINT NOT NULL,
