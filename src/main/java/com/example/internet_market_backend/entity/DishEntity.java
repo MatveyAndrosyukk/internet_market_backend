@@ -29,8 +29,8 @@ public class DishEntity {
     @Column(name = "total_price")
     private Long totalPrice;
     @ManyToMany(mappedBy = "cart")
+    @ToString.Exclude
     private Set<UserEntity> users;
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
