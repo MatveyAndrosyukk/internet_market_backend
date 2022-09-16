@@ -36,5 +36,6 @@ public class UserEntity {
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "dish_id", referencedColumnName = "id")
     )
+    @ToString.Exclude
     private Set<DishEntity> cart;
 }
