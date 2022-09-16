@@ -5,6 +5,7 @@ import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "dishes")
@@ -27,6 +28,8 @@ public class DishEntity {
     private Long count;
     @Column(name = "total_price")
     private Long totalPrice;
+    @ManyToMany(mappedBy = "cart")
+    private Set<UserEntity> users;
 
     @Override
     public boolean equals(Object o) {
