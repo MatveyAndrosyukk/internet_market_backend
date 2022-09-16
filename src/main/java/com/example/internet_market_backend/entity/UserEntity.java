@@ -1,12 +1,9 @@
 package com.example.internet_market_backend.entity;
 
 import lombok.*;
-import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
 import java.util.Set;
-
-import static org.hibernate.annotations.FetchMode.SELECT;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
@@ -31,7 +28,6 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @Fetch(value = SELECT)
     @JoinTable(
             name = "user_dish",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
