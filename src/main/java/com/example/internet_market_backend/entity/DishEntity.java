@@ -2,6 +2,7 @@ package com.example.internet_market_backend.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -20,6 +21,7 @@ public class DishEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Lob
+    @Type(type = "org.hibernate.type.ImageType")
     private byte[] image;
     private Long price;
     private String title;
