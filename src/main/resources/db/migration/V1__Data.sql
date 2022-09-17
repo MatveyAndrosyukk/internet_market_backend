@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS users
 (
-    id BIGINT NOT NULL,
+    id SERIAL,
     email VARCHAR(255),
     name VARCHAR(255),
     password VARCHAR(255) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users
 
 CREATE TABLE IF NOT EXISTS dishes
 (
-    id BIGINT NOT NULL,
+    id SERIAL,
     category VARCHAR(255) NOT NULL,
     count BIGINT NOT NULL,
     description VARCHAR(3000) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS dishes
 
 CREATE TABLE IF NOT EXISTS dishes_model
 (
-    id BIGINT NOT NULL,
+    id SERIAL,
     category VARCHAR(255) NOT NULL,
     count BIGINT NOT NULL,
     description VARCHAR(3000) NOT NULL,
