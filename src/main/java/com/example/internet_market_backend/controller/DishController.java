@@ -39,19 +39,4 @@ public class DishController {
 
         return dishService.buildPaginatedResponse(response, limit, page, String.valueOf(response.size()));
     }
-
-    @PostMapping
-    public ResponseEntity<Dish> saveDish(@RequestBody Dish dish) {
-        Dish response = dishService.save(dish);
-
-        return ResponseEntity.ok(response);
-    }
-
-    @PutMapping("{dishId}")
-    public ResponseEntity<Dish> updateDishImage(@PathVariable Long dishId,
-                                                @RequestParam("file") MultipartFile file) {
-        Dish response = dishService.updateDishImage(dishId, file);
-
-        return ResponseEntity.ok(response);
-    }
 }

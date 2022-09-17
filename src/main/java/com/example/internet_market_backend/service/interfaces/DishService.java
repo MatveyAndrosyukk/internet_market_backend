@@ -18,6 +18,8 @@ public interface DishService {
 
     Dish updateDishImage(Long id, MultipartFile file);
 
+    Long deleteDish(Long dishId);
+
     ResponseEntity<List<Dish>> buildPaginatedResponse(List<Dish> dishes,
                                                             Integer limit,
                                                             Integer page,

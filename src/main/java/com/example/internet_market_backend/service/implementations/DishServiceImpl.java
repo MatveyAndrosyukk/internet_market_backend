@@ -104,6 +104,17 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
+    public Long deleteDish(Long dishId) {
+        try {
+            dishRepository.deleteById(dishId);
+        }catch (Exception ex){
+            throw new OperationFailedException("Delete dish method failed!");
+        }
+
+        return dishId;
+    }
+
+    @Override
     public ResponseEntity<List<Dish>> buildPaginatedResponse(List<Dish> dishes,
                                                                    Integer limit,
                                                                    Integer page,
