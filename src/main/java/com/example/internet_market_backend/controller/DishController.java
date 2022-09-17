@@ -28,7 +28,7 @@ public class DishController {
         return dishService.buildPaginatedResponse(response, limit, page, String.valueOf(response.size()));
     }
 
-    @GetMapping("/category")
+    @GetMapping("category")
     public ResponseEntity<List<Dish>> findDishesByCategory(@RequestParam(value = "category") String category,
                                                                  @RequestParam(value = "limit", required = false)
                                                                          Integer limit,
@@ -40,21 +40,21 @@ public class DishController {
         return dishService.buildPaginatedResponse(response, limit, page, String.valueOf(response.size()));
     }
 
-    @PostMapping("dishes")
+    @PostMapping()
     public ResponseEntity<Dish> saveDish(@RequestBody Dish dish) {
         Dish response = dishService.save(dish);
 
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("dishes/{dishId}")
+    @PutMapping("{dishId}")
     public ResponseEntity<Dish> updateDishImage(@PathVariable Long dishId, @RequestParam("file") MultipartFile file) {
         Dish response = dishService.updateDishImage(dishId, file);
 
         return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("dishes/{dishId}")
+    @DeleteMapping("{dishId}")
     public ResponseEntity<Long> deleteDish(@PathVariable Long dishId){
         Long deletedId = dishService.deleteDish(dishId);
 
