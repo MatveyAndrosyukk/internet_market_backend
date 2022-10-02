@@ -29,8 +29,6 @@ public class DishServiceImpl implements DishService {
 
     @Override
     public List<Dish> findAll() {
-        log.info("Getting all dishes");
-
         List<DishEntity> dishes;
         try {
             dishes = dishRepository.findAll();
@@ -46,15 +44,11 @@ public class DishServiceImpl implements DishService {
         DishEntity dish = dishRepository.findById(id)
                 .orElseThrow(() -> new DataNotFoundException(DISH_DOES_NOT_EXISTS));
 
-        log.info("Getting dish: {} by ID: {}", dish, id);
-
         return dish;
     }
 
     @Override
     public List<Dish> findByCategory(String category) {
-        log.info("Getting dishes by category");
-
         List<DishEntity> dishes;
         try {
             dishes = dishRepository.findByCategory(category);
@@ -67,8 +61,6 @@ public class DishServiceImpl implements DishService {
 
     @Override
     public Dish save(Dish dish) {
-        log.info("Saving dish: {}", dish);
-
         DishEntity dishEntity = ModelUtils.buildDishEntity(dish);
 
         DishEntity savedDish;
@@ -84,8 +76,6 @@ public class DishServiceImpl implements DishService {
     @Override
     public Dish updateDishImage(Long dishId, MultipartFile file) {
         DishEntity dishById = findById(dishId);
-
-        log.info("Updating dish image: {}", dishById);
 
         try{
             dishById.setImage(file.getBytes());

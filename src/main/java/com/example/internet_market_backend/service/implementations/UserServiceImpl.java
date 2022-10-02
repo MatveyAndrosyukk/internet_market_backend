@@ -27,8 +27,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
-        log.info("Getting all users");
-
         List<UserEntity> users;
 
         try{
@@ -42,16 +40,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity findById(Long id) {
-        log.info("Getting user by id: {}", id);
-
         return userRepository.findById(id)
                 .orElseThrow(() -> new DataNotFoundException("User does not exists"));
     }
 
     @Override
     public User findByEmail(String email) {
-        log.info("Getting user by email: {}", email);
-
         UserEntity userEntity;
         try{
             userEntity = userRepository.findByEmail(email);
@@ -64,8 +58,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(User user) {
-        log.info("Saving user: {}", user);
-
         UserEntity userEntity = ModelUtils.buildClearUserEntity(user);
 
         UserEntity savedUser;
@@ -85,8 +77,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User logIn(String email, String password) {
-        log.info("Finding user with email: {}, password: {}", email, password);
-
         User userByEmail = findByEmail(email);
 
         if (userByEmail == null){
@@ -102,8 +92,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User updateUserCart(User user, Long dishId) {
-        log.info("Updating user's cart");
-
         DishEntity dishEntityById = dishService.findById(dishId);
         UserEntity userEntityById = findById(user.getId());
 
